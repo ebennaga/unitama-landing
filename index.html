@@ -37,6 +37,11 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet" />
+
+      <link
+              rel="stylesheet"
+              href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+      />
   </head>
 
   <body>
@@ -301,33 +306,70 @@
     </div> -->
     <!-- Fact End -->
 
+<!--    <div class="container-xxl py-5">-->
+<!--      <div class="container py-5">-->
+<!--        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">-->
+<!--          <h6 class="text-secondary text-uppercase">Our News</h6>-->
+<!--          <h1 class="mb-5">Our News</h1>-->
+<!--        </div>-->
+<!--        <div class="row g-4">-->
+<!--          <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">-->
+<!--           <a href="">-->
+<!--             <div class="service-item p-4">-->
+<!--               <div class="overflow-hidden mb-4">-->
+<!--                 <img class="img-fluid" src="img/zoom.jpeg" alt="" />-->
+<!--               </div>-->
+<!--               <h4 class="mb-3">Webinar</h4>-->
+<!--               <p>-->
+<!--                 webinar.-->
+<!--               </p>-->
+
+<!--             </div>-->
+<!--           </a>-->
+<!--          </div>-->
+
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
     <div class="container-xxl py-5">
-      <div class="container py-5">
-        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-          <h6 class="text-secondary text-uppercase">Our News</h6>
-          <h1 class="mb-5">Our News</h1>
-        </div>
-        <div class="row g-4">
-          <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
-           <a href="">
-             <div class="service-item p-4">
-               <div class="overflow-hidden mb-4">
-                 <img class="img-fluid" src="img/zoom.jpeg" alt="" />
-               </div>
-               <h4 class="mb-3">Webinar</h4>
-               <p>
-                 webinar.
-               </p>
+        <div class="container py-5">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+              <h6 class="text-secondary text-uppercase">Our News</h6>
+              <h1 class="mb-5">Our News</h1>
+            </div>
+            <swiper-container class="mySwiper" pagination="true" pagination-clickable="true"
+                      free-mode="true">
 
-             </div>
-           </a>
-          </div>
-
+                <swiper-slide>
+                    <div class="card">
+                        <img src="img/zoom.jpeg" alt="City Life">
+                        <div class="card-content">
+                            <h3>Webinar</h3>
+                            <p>Webinar.</p>
+                        </div>
+                    </div>
+                </swiper-slide>
+                <swiper-slide>
+                    <div class="card">
+                        <img src="img/zoom.jpeg" alt="City Life">
+                        <div class="card-content">
+                            <h3>Webinar</h3>
+                            <p>Webinar.</p>
+                        </div>
+                    </div>
+                </swiper-slide>
+                <swiper-slide>
+                    <div class="card">
+                        <img src="img/zoom.jpeg" alt="City Life">
+                        <div class="card-content">
+                            <h3>Webinar</h3>
+                            <p>Webinar.</p>
+                        </div>
+                    </div>
+                </swiper-slide>
+            </swiper-container>
         </div>
-      </div>
     </div>
-
-
     <!-- Service Start -->
     <div class="container-xxl py-5">
       <div class="container py-5">
@@ -1021,6 +1063,7 @@
     <script src="lib/waypoints/waypoints.min.js"></script>
     <script src="lib/counterup/counterup.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
@@ -1029,6 +1072,18 @@
     <script>
       var copy = document.querySelector(".logos-slide").cloneNode(true);
       document.querySelector(".logos").appendChild(copy);
+    </script>
+    <script>
+        const swiperEl = document.querySelector('.mySwiper');
+        Object.assign(swiperEl, {
+            slidesPerView: 3,
+            spaceBetween: 20,
+            breakpoints: {
+                640: { slidesPerView: 1, spaceBetween: 20 },
+                1024: { slidesPerView: 2, spaceBetween: 30 },
+            }
+        });
+        swiperEl.initialize();
     </script>
   </body>
 </html>
